@@ -5,7 +5,7 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #333333;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,25 +14,26 @@
 
 /* webkit solution */
 ::-webkit-input-placeholder { 
-  text-align:right; 
+  text-align: right; 
 }
 
 /* mozilla solution */
 input:-moz-placeholder { 
-  text-align:right; 
+  text-align: right; 
 }
 
 a {
   font-weight: 500;
-  color: #000000;
+  color: #2c3e50;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #1a5276;
+  text-decoration: underline;
 }
 
 body {
-  background: #ECF0F1;
+  background: #f5f5f5;
   background-size: cover;
   background-repeat: no-repeat no-repeat;
   background-position: center center;
@@ -45,29 +46,32 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #2c3e50;
 }
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #d1d1d1;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #e7e7e7;
+  color: #333333;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #2c3e50;
+  background-color: #d1d1d1;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto #2c3e50;
 }
 
 main {
-  color: black;
+  color: #333333;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -76,18 +80,25 @@ main {
 
 tr {
   border-radius: 10px;
-  background-color: #000;
+  background-color: #2c3e50;
   color: white;
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #333333;
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e7e7e7;
+  color: #333333;
 }
 
 /* Navbar Content */
 .nav {
   display: flex;
   padding: 1em 2em;
+  background-color: #2c3e50;
 }
 
 .nav ul {
@@ -105,7 +116,7 @@ tbody tr:nth-child(odd) {
 }
 
 .nav-title a {
-  color: #b864c4;
+  color: #ffffff;
 }
 
 .nav-item {
@@ -115,17 +126,26 @@ tbody tr:nth-child(odd) {
 }
 
 .nav-link {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
+  padding: 0.5em 1em;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 .active {
   font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 }
 
 .table {
   width: 80vw;
   table-layout: fixed;
+  border-collapse: collapse;
 }
 
 .board {
@@ -144,95 +164,127 @@ tbody tr:nth-child(odd) {
   border: 1px solid rgba(0, 0, 0, 0.2);
   margin: 5px;
   padding: 5px;
+  border-radius: 4px;
 }
 
 .todo {
-  background-color: #e9cbec;
+  background-color: #e7e7e7;
 }
 
 .inprogress {
-  background-color: #b864c4;
+  background-color: #d1d1d1;
 }
 
 .done {
-  background-color: #732381;
+  background-color: #b3b3b3;
 }
 
 .ticket-card {
   text-align: left;
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 0.1em solid black;
+  border: 1px solid #d1d1d1;
 }
 
 .container {
-  /* margin: auto; */
   width: 100%;
-  /* height: 90%; */
 }
 
 #create-ticket-link {
   display: block;
   margin-left: auto;
+  background-color: #2c3e50;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
+#create-ticket-link:hover {
+  background-color: #1a5276;
+}
 
 .form {
   width: 60%;
   height: 80%;
-  background-color: #b864c4;
+  background-color: #f5f5f5;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2em;
 }
 
 .form > h1, .form > label {
-  color: yellow;
+  color: #2c3e50;
 }
 
-.form > input {
-  width: 200px;
-  
+.form > input, .form > textarea, .form > select {
+  width: 80%;
+  padding: 0.5em;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  background-color: #ffffff;
 }
 
 .form > label {
   margin-top: 2.5%;
-  margin-bottom: 2.5%;
+  margin-bottom: 0.5%;
+  align-self: flex-start;
+  margin-left: 10%;
+  font-weight: 500;
 }
 
 .form button {
   margin-top: 2.5%;
+  background-color: #2c3e50;
+  color: white;
+}
+
+.form button:hover {
+  background-color: #1a5276;
 }
 
 .form textarea {
   resize: both;
-  min-height: 30px;
-  min-width: 30px;
+  min-height: 100px;
+  min-width: 80%;
 }
 
 .editBtn {
-  background-color: #f9f9f9;
+  background-color: #e7e7e7;
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #d1d1d1;
   padding: 0.6em 1.2em;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
+}
+
+.editBtn:hover {
+  background-color: #d1d1d1;
+  border-color: #2c3e50;
 }
 
 .deleteBtn {
   background-color: #f9f9f9;
   font-weight: 500;
-  color: black;
+  color: #e74c3c;
   text-decoration: inherit;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 1px solid transparent;
 }
 
 .deleteBtn:hover {
-  color: #535bf2;
+  color: #c0392b;
+  background-color: #fadbd8;
+  border-color: #e74c3c;
 }
 
 .login-notice {
@@ -240,18 +292,83 @@ tbody tr:nth-child(odd) {
   width: 100%;
   align-items: center;
   justify-content: center;
+  padding: 2em;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin: 2em;
 }
 
-
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #e7e7e7;
+    background-color: #1a1a1a;
   }
+  
+  body {
+    background: #1a1a1a;
+  }
+  
+  h1 {
+    color: #e7e7e7;
+  }
+  
+  a {
+    color: #77a5ca;
+  }
+  
   a:hover {
-    color: #747bff;
+    color: #a3c2db;
   }
+  
   button {
-    background-color: #f9f9f9;
+    background-color: #2c3e50;
+    color: #e7e7e7;
+    border: 1px solid #4a6278;
+  }
+  
+  button:hover {
+    background-color: #3d5a74;
+  }
+  
+  .todo {
+    background-color: #2a2a2a;
+  }
+  
+  .inprogress {
+    background-color: #333333;
+  }
+  
+  .done {
+    background-color: #3d3d3d;
+  }
+  
+  .ticket-card {
+    background-color: #2a2a2a;
+    border-color: #444444;
+  }
+  
+  .form {
+    background-color: #2a2a2a;
+    border-color: #444444;
+  }
+  
+  .form > h1, .form > label {
+    color: #e7e7e7;
+  }
+  
+  .form > input, .form > textarea, .form > select {
+    background-color: #333333;
+    border-color: #444444;
+    color: #e7e7e7;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #2a2a2a;
+    color: #e7e7e7;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #333333;
+    color: #e7e7e7;
   }
 }
